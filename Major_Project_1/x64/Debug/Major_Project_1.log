@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\_Files\Computer Programming Files\VS\Major_Project_1\main.cpp(31,37): warning C4838: 从“int”转换到“const char”需要收缩转换
+C:\_Files\Computer Programming Files\VS\Major_Project_1\main.cpp(31,37): warning C4305: “初始化”: 从“int”到“const char”截断
+C:\_Files\Computer Programming Files\VS\Major_Project_1\main.cpp(31,37): warning C4309: “初始化”: 截断常量值
+  Major_Project_1.vcxproj -> C:\_Files\Computer Programming Files\VS\Major_Project_1\x64\Debug\Major_Project_1.exe
