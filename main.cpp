@@ -222,6 +222,10 @@ int main() {
 		cin >> city_passed[i].name >> city_passed[i].x >> city_passed[i].y;
 	}
 	city_passed[n] = city_passed[0];
+	cout << "城市信息录入完成！" << endl;
+	cout << "请输入你的出发城市：";
+	char start_city[20];
+	cin >> start_city;
 
 	cout << "————————————————————————————————" << endl;
 	thread loading_thread(loading_animation);//开启加载动画线程
@@ -302,12 +306,24 @@ int main() {
 	loading_thread.join();
 	cout << "————————————————————————————————" << endl;
 	cout << "最短旅游路线：" << endl;
-	for (int i = 0; i < n; i++) {
+	//找到出发城市的位置
+	int start = 0;
+	for (int i = 0; i <= n; i++) {
+		if (strcmp(city_passed[city_order[i]].name, start_city) == 0) {
+			start = i;
+			break;
+		}
+	}
+	for (int i = start; i <= n; i++) {
 		cout << city_passed[city_order[i]].name << " -> ";
 	}
-	cout << city_passed[city_order[n]].name << endl;
+	for (int i = 0; i < start; i++) {
+		cout << city_passed[city_order[i]].name << " -> ";
+	}
+	cout << city_passed[city_order[start]].name << endl;
 	cout << "最短路径长度：" << fixed << setprecision(2) << distance << "km" << endl;
 
 	delete[] city_passed;
+	system("pause");
 	return 0;
 }
